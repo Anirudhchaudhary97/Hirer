@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const dbConnect= async ()=>{
 
   try {
-    const connection= await mongoose.connect("mongodb://localhost:27017/hirer")
+    const connection= await mongoose.connect(process.env.MONGO_COMPASS_URL)
     if(connection){
       console.log("connected to database")
     } 
