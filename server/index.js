@@ -9,6 +9,7 @@ const port = process.env.PORT || 4000;
 
 // Middleware for parsing JSON bodies
 app.use(express.json());
+app.use(express.urlencoded({ extended:true }));
 app.use(cors());
 app.use(cookieParser());
 

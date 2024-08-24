@@ -61,13 +61,13 @@ const loginUser = async (req, res) => {
         const token = jwt.sign(
           { phoneNumber: req.body.phoneNumber },  // here we can also pass tokenData
           process.env.SECRECT_KEY,
-          { expiresIn: "1h" }
+          { expiresIn: "1d" }
         );
 
         res
           .status(200)
           .cookie("token", token, {
-            maxAge: 1 * 60 * 60 * 1000,
+            maxAge: 1 * 24 * 60 * 60 * 1000,
             httpsOnly: true,
             sameSite: "strict",
           })
