@@ -17,6 +17,7 @@ const jobSchema = new Schema(
         type: String,
       },
     ],
+    experience:String,
     salary: {
       type: Number,
     },

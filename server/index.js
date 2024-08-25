@@ -20,8 +20,10 @@ dbConnect();
 
 const userRoute=require("./src/routes/user")
 const companyRoute=require("./src/routes/company")
+const jobRoute=require("./src/routes/job")
 app.use(userRoute)
 app.use(companyRoute)
+app.use(jobRoute)
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
