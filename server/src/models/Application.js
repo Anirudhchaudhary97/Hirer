@@ -9,14 +9,14 @@ const applicationSchema = new Schema(
         ref: "Job",
         required: true,
     },
-    applicants: {
+    applicant: {
         type:mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true,
     },
     status:{
         type:String,
-        enum:["pending","selected","pending"],
+        enum:["pending","selected","rejected"],
         default:"pending"
     }
  
