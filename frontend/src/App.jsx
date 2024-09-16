@@ -1,11 +1,12 @@
 import React from 'react'
-import { Button } from './components/ui/button'
+import Navbar from './components/shared/Navbar'
+
 
 const App = () => {
   return (
-    <div className='mx-5'>
-      <Button>click</Button>
-    </div>
+    <>
+      <Navbar/>
+    </>
   )
 }
 
