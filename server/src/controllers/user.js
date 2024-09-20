@@ -18,9 +18,9 @@ const registerUser = async (req, res) => {
     const emailExist = await User.exists({ email });
 
     if (phoneExist) {
-      return res.status(400).json({ msg: "Phone Number is taken" });
+      return res.status(400).json({ msg: "Phone Number is taken" ,success:false});
     } else if (emailExist) {
-      return res.status(400).json({ msg: "Email is taken" });
+      return res.status(400).json({ msg: "Email is taken" ,success:false});
     }
 
     const hashPassword = await bcrypt.hash(password, saltRounds);
@@ -33,8 +33,8 @@ const registerUser = async (req, res) => {
       password: hashPassword,
       role,
     });
-    console.log(user);
-    res.json({ msg: "user successfully Register" });
+  
+    res.json({ msg: "user successfully Register",success:true ,user});
   } catch (error) {
     console.log(error);
   }
@@ -71,7 +71,7 @@ const loginUser = async (req, res) => {
             httpsOnly: true,
             sameSite: "strict",
           })
-          .json({ msg: "successfully login", user });
+          .json({ msg: "successfully login", user,success:true });
       } else {
         res.json({ msg: "Invalid Password" });
       }
