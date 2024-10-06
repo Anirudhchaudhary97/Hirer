@@ -21,11 +21,11 @@ const HeroSection = () => {
         shadow-lg border border-gray-200 mx-auto rounded-full"
         >
           <input
-            className="outline-none border-none w-full text-xl"
+            className="outline-none border-none w-full text-xl p-3"
             type="text"
             placeholder="search jobs"
           />
-          <Button className="rounded-r-full bg-[#053B48]">
+          <Button className="rounded-full bg-[#053B48] mr-1">
             <Search className="h-5 w-5" />
           </Button>
         </div>
