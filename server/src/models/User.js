@@ -11,12 +11,10 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: true,
-      
     },
-    phoneNumber:{
-      type:Number,
+    phoneNumber: {
+      type: String, // Use String to allow flexibility (country codes, formatting)
       required: true,
-     
     },
     password: {
       type: String,
@@ -31,7 +29,7 @@ const userSchema = new Schema(
 
     profile: {
       bio: String, // String is shorthand for {type: String}
-      skills: Array,
+      skills:[Array],
       resume: String,
       resumeOriginalName: String,
       company: { type: mongoose.Schema.Types.ObjectId, ref: "Company" },

@@ -6,11 +6,17 @@ const app = express();
 
 require("dotenv").config();
 const port = process.env.PORT || 4000;
-
+  
 // Middleware for parsing JSON bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:5173', // Specify the exact frontend URL
+  credentials: true, // Allow credentials (cookies, tokens) to be sent
+}));
+
 app.use(cookieParser());
 
 // database connection

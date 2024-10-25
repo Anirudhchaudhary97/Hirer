@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "@/redux/reducerSlices/userSlice";
+import { setLoading, setUser } from "@/redux/reducerSlices/userSlice";
 import { Loader2Icon } from "lucide-react";
 
 
@@ -38,10 +38,11 @@ const Login = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        
+        withCredentials: true
       });
-      console.log(res.data.success)
+      
       if(res.data.success){
+        dispatch(setUser(res.data.user))
         toast.success(res.data.msg)
         navigate('/')
       }else{

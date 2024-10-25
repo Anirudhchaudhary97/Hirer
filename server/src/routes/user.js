@@ -11,5 +11,5 @@ const { upload } = require("../middlewares/multer");
   router.post("/register",upload, registerUser);
   router.post("/login", loginUser);
   router.get("/logout", logOut);
-  router.put("/profile/:id",isAuthenticated, updateUser)
-  module.exports = router;
+  router.put("/profile/:id",isAuthenticated, upload, updateUser)
+  module.exports = router;  
